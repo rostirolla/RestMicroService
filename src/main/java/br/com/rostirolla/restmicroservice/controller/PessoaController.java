@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -13,6 +15,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.rostirolla.restmicroservice.model.Pessoa;
@@ -22,7 +25,7 @@ import io.swagger.annotations.ApiOperation;
 import javassist.NotFoundException;
 
 //Exemplos de anotações no seguinte endereço: https://github.com/springfox/springfox/blob/master/springfox-spring-web/src/test/java/springfox/documentation/spring/web/dummy/controllers/FeatureDemonstrationService.java#L243-267
-@RestController
+@Controller
 @Api(description = "CRUD de Pessoas.")
 @RequestMapping("/pessoa")
 public class PessoaController {
@@ -42,6 +45,13 @@ public class PessoaController {
 		if (pessoaRepository.findById(id).isPresent())
 			return new ResponseEntity<Pessoa>(pessoaRepository.findById(id).get(), new HttpHeaders(), HttpStatus.OK);
 		return new ResponseEntity<Pessoa>(HttpStatus.NOT_FOUND);
+	}
+	
+	@ApiOperation(value = "Lista tabela com todas as pessoa")
+	@GetMapping("/tabela")
+	public String tablePessoas(Model model) {
+		model.addAttribute("pessoas", pessoaRepository.findAll());
+		return "pessoas";
 	}
 
 	@ApiOperation(value = "Cadastra uma pessoa")

@@ -12,7 +12,7 @@ import lombok.Setter;
 public class Pessoa {
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="idpessoa")
+	@GeneratedValue(strategy=GenerationType.IDENTITY, generator="idpessoa")
 	@Getter
 	private Long id;
 	
