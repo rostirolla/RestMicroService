@@ -27,8 +27,8 @@ public class SwaggerConfig {
     
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
-                .title("API Teste em Spring - Rostirolla")
-                .description("Demonstração de Teste de uma API com Spring, Gradle, JPA, Hibernate, Lombok banco H2 e documentação com Swagger. Foi utilizada a Spring Tool Suite (modificação do Eclipse) para desenvolvimento.")
+                .title("Rest Micro Service - Rostirolla")
+                .description("Micro serviço com Spring, JPA, Lombok, Thymeleaf, Swagger e banco PostgreSQL.")
                 .version("1.0.0")
                 .license("Apache License Version 2.0")
                 .licenseUrl("https://www.apache.org/licenses/LICENSE-2.0")
