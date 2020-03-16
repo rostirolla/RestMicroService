@@ -1,6 +1,6 @@
 # Rest Micro Service - Exemplo de Micro Serviço com Spring Boot e banco PostgreSQL
 
-![](https://dwglogo.com/wp-content/uploads/2017/12/Spring_Framework_logo_01.png)
+![](https://spring.io/images/spring-logo-fc4350c59999bb62c468361537212419.svg)
 
 Este exemplo (assim como o banco de dados) está hospedado e pode ser testado no endereço:
 
