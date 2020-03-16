@@ -11,4 +11,4 @@ Este exemplo (assim como o banco de dados) está hospedado e pode ser testado no
 * [IDE Spring Tools 4 for Eclipse](https://spring.io/tools)
 * [Project Lombok](https://projectlombok.org/download)
 * [Heroku (hospedagem do app e do banco)](https://www.heroku.com/)
-* O app é atualizado no Heroku via CD (continuous delivery) através dste GitHub.
+* O app é atualizado no Heroku via CD (continuous delivery) através deste GitHub.
