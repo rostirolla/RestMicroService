@@ -3,6 +3,7 @@ package br.com.rostirolla.restmicroservice.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -45,6 +46,12 @@ public class PessoaController {
 		if (pessoaRepository.findById(id).isPresent())
 			return new ResponseEntity<Pessoa>(pessoaRepository.findById(id).get(), new HttpHeaders(), HttpStatus.OK);
 		return new ResponseEntity<Pessoa>(HttpStatus.NOT_FOUND);
+	}
+	
+	@ApiOperation(value = "Pesquisa pessoas pelo nome")
+	@GetMapping(path = "/nome/{nome}", produces = "application/json")
+	public ResponseEntity<List<Pessoa>> getPessoasByNome(@PathVariable("nome") String nome) {
+		return new ResponseEntity<List<Pessoa>>(pessoaRepository.findAllByNome(nome), new HttpHeaders(), HttpStatus.OK);
 	}
 	
 	@ApiOperation(value = "Lista tabela com todas as pessoa")
