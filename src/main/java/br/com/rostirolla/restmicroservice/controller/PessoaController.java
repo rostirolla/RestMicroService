@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import br.com.rostirolla.restmicroservice.CorsConfig;
 import br.com.rostirolla.restmicroservice.model.Pessoa;
 import br.com.rostirolla.restmicroservice.repository.PessoaRepository;
 import io.swagger.annotations.Api;
