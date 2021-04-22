@@ -27,6 +27,7 @@ import javassist.NotFoundException;
 
 //Exemplos de anotações no seguinte endereço: https://github.com/springfox/springfox/blob/master/springfox-spring-web/src/test/java/springfox/documentation/spring/web/dummy/controllers/FeatureDemonstrationService.java#L243-267
 @Controller
+@CorsConfig
 @Api(description = "CRUD de Pessoas.")
 @RequestMapping("/pessoa")
 public class PessoaController {
